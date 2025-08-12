@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Selectors Demo</title>
+    <style>
+      h1 {
+        /* element selector */
+        /* color: brown; */
+        font-size: 40px;
+        text-align: center;
+      }
+
+      * {
+        /* universal selector */
+        color: green;
+      }
+
+      #header {
+        /* ID selector */
+        background-color: lightblue;
+      }
+
+      .class1 {
+        /* class selector */
+        color: aqua;
+        font-style: italic;
+      }
+
+      .class2 {
+        /* class selector */
+        color: red;
+        font-weight: bold;
+      }
+
+      .class3 {
+        /* class selector */
+        color: blue;
+        font-size: 50px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        /* group selector */
+        color: purple;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="header" class="class1">This is an H1 with ID and class1</h1>
+    <h2 class="class2">This is an H2 with class2</h2>
+    <h3 class="class3">This is an H3 with class3</h3>
+    <p class="class1">This is a paragraph with class1</p>
+    <p class="class2">This is a paragraph with class2</p>
+    <p class="class3">This is a paragraph with class3</p>
+    <div id="header">This is a div with ID 'header'</div>
+  </body>
+</html>
