@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Layout with Real Images</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #eef2f5;
+        margin: 20px;
+      }
+      .container {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .card {
+        background: #fff;
+        border-radius: 6px;
+        padding: 16px;
+        flex: 1;
+        min-width: 300px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      .card h2 {
+        font-size: 1.2em;
+        margin-bottom: 12px;
+      }
+      .product-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .product {
+        width: calc(50% - 5px);
+        text-align: center;
+      }
+      .product img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+      .product p {
+        font-size: 0.9em;
+        margin-top: 6px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .card a {
+        display: inline-block;
+        margin-top: 12px;
+        color: #0066c0;
+        text-decoration: none;
+        font-size: 0.9em;
+      }
+      .card a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Left Section -->
+      <div class="card">
+        <h2>Pick up where you left off</h2>
+        <div class="product-grid">
+          <div class="product">
+            <img
+              src="https://www.phantom-athletics.com/cdn/shop/files/Phantom-Athletics-Apex-Muay-Thai-Boxhandschuhe-Schwarz-Gold-1.jpg?v=1721052776"
+              alt="Boxing Gloves"
+            />
+            <p>XTRIM X-Macho Leather…</p>
+          </div>
+          <div class="product">
+            <img
+              src="https://www.gorillawear.com/resize/99905900-mosby-boxing-gloves-01_2538765076095.jpg/0/1100/True/mosby-boxing-gloves-black-12oz.jpg"
+              alt="Boxing Gloves"
+            />
+            <p>Kobo WTG-05 Leather</p>
+          </div>
+          <div class="product">
+            <img
+              src="https://us.phantom-athletics.com/products/boxing-gloves-muay-thai-limited-black-edition"
+              alt="Boxing Gloves"
+            />
+            <p>19.ten Leather Gym GL…</p>
+          </div>
+          <div class="product">
+            <img
+              src="https://gorillawear.com/product/4169/mosby-boxing-gloves-black-12oz.html"
+              alt="Boxing Gloves"
+            />
+            <p>BROGBUS Neoprene W…</p>
+          </div>
+        </div>
+        <a href="#">See more</a>
+      </div>
+
+      <!-- Right Section -->
+      <div class="card">
+        <h2>Keep shopping for</h2>
+        <div class="product-grid">
+          <div class="product">
+            <img
+              src="https://via.placeholder.com/300x300?text=Smartphone"
+              alt="Smartphone"
+            />
+            <p>Smartphones & basic…</p>
+          </div>
+          <div class="product">
+            <img
+              src="https://via.placeholder.com/300x300?text=Kurta"
+              alt="Kurta"
+            />
+            <p>Women’s kurtas & ku…</p>
+          </div>
+          <div class="product">
+            <img
+              src="https://via.placeholder.com/300x300?text=Trimmer"
+              alt="Trimmer"
+            />
+            <p>Men’s beard & moust…</p>
+          </div>
+          <div class="product">
+            <img
+              src="https://via.placeholder.com/300x300?text=Cooktop"
+              alt="Cooktop"
+            />
+            <p>Induction cooktops</p>
+          </div>
+        </div>
+        <a href="#">View your browsing history</a>
+      </div>
+    </div>
+  </body>
+</html>
