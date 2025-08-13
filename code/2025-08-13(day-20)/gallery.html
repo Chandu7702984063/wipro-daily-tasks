@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simple Image Gallery</title>
+    <style>
+      .gallery-container {
+        text-align: center;
+        margin-top: 40px;
+      }
+      img {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      button {
+        margin: 15px 10px;
+        padding: 8px 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gallery-container">
+      <img id="galleryImg" src="" alt="Gallery Image" />
+      <br />
+      <button id="prevBtn">Prev</button>
+      <button id="nextBtn">Next</button>
+    </div>
+    <script src="gallery.js"></script>
+  </body>
+</html>
