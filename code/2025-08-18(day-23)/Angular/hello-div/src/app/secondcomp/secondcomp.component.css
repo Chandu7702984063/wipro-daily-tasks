@@ -1,0 +1,10 @@
+.second-div {
+  background-color: lightgreen;
+  color: darkgreen;
+  font-size: 20px;
+  padding: 15px;
+  border: 2px solid darkgreen;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 20px;
+}

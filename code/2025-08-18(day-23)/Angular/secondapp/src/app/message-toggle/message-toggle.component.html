@@ -1,0 +1,9 @@
+<h2>Show/Hide Message Example</h2>
+
+<label>
+  <input type="checkbox" [(ngModel)]="showMessage" /> Show Message
+</label>
+
+<div *ngIf="showMessage" style="margin-top: 10px; color: green">
+  ✅ Hello! This is a hidden message revealed by the checkbox.
+</div>
