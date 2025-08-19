@@ -1,0 +1,26 @@
+<form (ngSubmit)="onSubmit()" class="task-form">
+    
+  <div class="form-row">
+    <label for="desc">Task Description</label>
+    <input
+      id="desc"
+      type="text"
+      [(ngModel)]="description"
+      name="description"
+      placeholder="e.g. Complete assignment, Buy groceries, etc."
+    />
+  </div>
+
+  <div class="form-row">
+    <label for="cat">Task Category</label>
+    <input
+      id="cat"
+      type="text"
+      [(ngModel)]="category"
+      name="category"
+      placeholder="e.g.Work, Study,Exercise etc.."
+    />
+  </div>
+
+  <button type="submit" [disabled]="!description.trim()">Add Task</button>
+</form>

@@ -1,0 +1,20 @@
+<div class="table">
+  <div class="row header">
+    <div>ID</div>
+    <div>Description</div>
+    <div>Category</div>
+    <div>Actions</div>
+  </div>
+
+  @for (t of tasks.slice().reverse(); track t.id) {
+  <div class="row">
+    <div>{{ t.id }}</div>
+
+    <div>{{ t.description }}</div>
+    <div>{{ t.category }}</div>
+    <div>
+      <button (click)="remove.emit(t.id)">delete</button>
+    </div>
+  </div>
+  }
+</div>

@@ -1,0 +1,4 @@
+<h2>Task Manager</h2>
+<app-task (add)="addTask($event)"></app-task>
+<hr />
+<app-task-list [tasks]="tasks" (remove)="deleteTask($event)"></app-task-list>

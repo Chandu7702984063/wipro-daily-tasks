@@ -1,0 +1,10 @@
+<div class="container">
+  <h2 class="text-center mt-3">Fruit List</h2>
+  <app-display-list></app-display-list>
+</div>
+
+<h2>Fruit List</h2>
+
+<div *ngFor="let fruit of fruits">
+  <app-fruit [fruitName]="fruit"></app-fruit>
+</div>

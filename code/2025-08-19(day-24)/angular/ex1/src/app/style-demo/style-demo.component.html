@@ -1,0 +1,22 @@
+<div class="container mt-4">
+  <h3>ngClass Examples</h3>
+  <p [ngClass]="'red-box'">This uses ngClass with STRING</p>
+  <p [ngClass]="['red-box', 'blue-box']">
+    This uses ngClass with ARRAY both styles applied
+  </p>
+  <p [ngClass]="{ 'red-box': false, 'blue-box': false }">
+    This uses ngClass with OBJECT conditionally applied
+  </p>
+
+  <p [ngClass]="getNgClass()">This uses ngClass with FUNCTION</p>
+
+  <p
+    [ngStyle]="{
+      color: 'red',
+      'font-size': '20px',
+      background: 'yellow'
+    }"
+  >
+    This uses ngStyle with OBJECT
+  </p>
+</div>
