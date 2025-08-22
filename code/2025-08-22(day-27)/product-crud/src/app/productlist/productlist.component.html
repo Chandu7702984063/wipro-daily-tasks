@@ -1,0 +1,20 @@
+<div style="padding: 16px">
+  <button (click)="addProduct()">Add Product</button>
+
+  @for (p of products; track p.id) {
+  <div
+    style="
+      border: 1px solid #ddd;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 8px;
+    "
+  >
+    <h3 style="margin: 0 0 6px 0">{{ p.name }}</h3>
+    <p style="margin: 0">Category: {{ p.category }}</p>
+    <p style="margin: 4px 0 10px 0">Price: ₹{{ p.price }}</p>
+    <a [routerLink]="['/productedit', p.id]" style="margin-right: 10px">Edit</a>
+    <a [routerLink]="['/productdelete', p.id]">Delete</a>
+  </div>
+  }
+</div>

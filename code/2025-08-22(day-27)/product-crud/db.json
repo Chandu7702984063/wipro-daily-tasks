@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": "8373",
+      "name": "Motorola",
+      "category": "Mobile",
+      "price": 40000
+    },
+    {
+      "id": "c642",
+      "name": "vivo",
+      "category": "mobile",
+      "price": 29999
+    },
+    {
+      "id": "2490",
+      "name": "ASUS",
+      "category": "laptop",
+      "price": 59999
+    }
+  ]
+}
