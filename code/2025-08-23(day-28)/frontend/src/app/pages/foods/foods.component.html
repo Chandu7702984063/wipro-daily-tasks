@@ -1,0 +1,61 @@
+<form (ngSubmit)="submit()">
+  <input
+    type="text"
+    placeholder="Name"
+    [(ngModel)]="foodForm.name"
+    name="name"
+    required
+  />
+  <input
+    type="text"
+    placeholder="Description"
+    [(ngModel)]="foodForm.description"
+    name="description"
+    required
+  />
+  <input
+    type="number"
+    placeholder="Price"
+    [(ngModel)]="foodForm.price"
+    name="price"
+    required
+  />
+  <input
+    type="text"
+    placeholder="Image URL"
+    [(ngModel)]="foodForm.imageUrl"
+    name="imageUrl"
+  />
+  <button type="submit">{{ editId ? "Update" : "Add" }} Food</button>
+  <button type="button" (click)="resetForm()">Clear</button>
+</form>
+
+<table border="1" style="margin-top: 20px; width: 100%; text-align: left">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Image</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let food of foods">
+    <td>{{ food.id }}</td>
+    <td>{{ food.name }}</td>
+    <td>{{ food.description }}</td>
+    <td>{{ food.price }}</td>
+    <td>
+      <img
+        *ngIf="food.imageUrl"
+        [src]="food.imageUrl"
+        alt="{{ food.name }}"
+        width="60"
+        height="60"
+      />
+    </td>
+    <td>
+      <button (click)="edit(food)">Edit</button>
+      <button (click)="delete(food.id)">Delete</button>
+    </td>
+  </tr>
+</table>

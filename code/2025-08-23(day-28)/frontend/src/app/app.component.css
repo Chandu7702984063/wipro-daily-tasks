@@ -1,0 +1,43 @@
+.container {
+  text-align: center;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.login-btn:hover {
+  background-color: #2980b9;
+}
+
+.register-btn {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.register-btn:hover {
+  background-color: #27ae60;
+}

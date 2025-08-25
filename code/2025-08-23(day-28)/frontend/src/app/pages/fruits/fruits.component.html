@@ -1,0 +1,39 @@
+<h2>🍎 Food Store</h2>
+
+<!-- Food Grid -->
+<div class="fruits-grid">
+  <div class="fruit-card" *ngFor="let item of foods">
+    <!-- ✅ Show image -->
+    <img
+      *ngIf="item.imageUrl"
+      [src]="item.imageUrl"
+      alt="{{ item.name }}"
+      width="60"
+      height="60"
+    />
+
+    <h3>{{ item.name }}</h3>
+    <p>{{ item.description }}</p>
+    <p><strong>Price:</strong> ₹{{ item.price }}</p>
+    <button (click)="addToCart(item)">🛒 Add to Cart</button>
+  </div>
+</div>
+
+<!-- Cart Section -->
+<div class="cart" *ngIf="cart.length > 0">
+  <h3>🛍️ Cart ({{ cart.length }} items)</h3>
+  <ul>
+    <li *ngFor="let item of cart; let i = index">
+      {{ item.name }} - ₹{{ item.price }}
+      <button (click)="removeFromCart(i)">❌ Remove</button>
+    </li>
+  </ul>
+
+  <p><strong>Total:</strong> ₹{{ getTotal() }}</p>
+  <button (click)="buyNow()">✅ Buy Now</button>
+</div>
+
+<!-- Empty Cart Message -->
+<div *ngIf="cart.length === 0" class="empty-cart">
+  <p>Your cart is empty 🛒</p>
+</div>
