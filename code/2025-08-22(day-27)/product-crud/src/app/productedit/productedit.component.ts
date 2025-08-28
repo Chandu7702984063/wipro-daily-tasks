@@ -9,9 +9,9 @@ import { Product } from '../models/product';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './productedit.component.html',
-  styleUrl: './productedit.component.css'
+  styleUrls: ['./productedit.component.css']
 })
-export class ProductEdit implements OnInit {
+export class ProductEditComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -20,7 +20,7 @@ export class ProductEdit implements OnInit {
   ) {}
 
   id: string | null = null;
-  product: Product = { name: '', category: '', price: 0 };
+  product: Product = { name: '', category: '', price: 0, qty: 0 }; // include qty
 
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
@@ -34,6 +34,7 @@ export class ProductEdit implements OnInit {
 
   save() {
     this.product.price = Number(this.product.price);
+    this.product.qty = Number(this.product.qty);
     this.productService.saveProduct(this.product).subscribe({
       next: () => this.router.navigate(['/productlist']),
       error: (err) => console.error('Error saving product:', err)

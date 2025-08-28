@@ -63,3 +63,22 @@
   border-radius: 5px;
   cursor: pointer;
 }
+.logout-btn {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.logout-btn button {
+  background-color: crimson;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.logout-btn button:hover {
+  background-color: darkred;
+}
+

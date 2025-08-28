@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: food-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/food/**
+        - id: order-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/orders/**

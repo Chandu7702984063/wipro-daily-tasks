@@ -1,0 +1,61 @@
+<form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+  <!-- Name -->
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" />
+    @if(regForm.controls['name'].invalid && (regForm.controls['name'].touched ||
+    regForm.controls['name'].dirty)) {
+    @if(regForm.controls['name'].errors?.['required']) {
+    <mat-error>Name is required</mat-error>
+    } }
+  </mat-form-field>
+
+  <!-- Email -->
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" formControlName="email" />
+    @if(regForm.controls['email'].invalid && (regForm.controls['email'].touched
+    || regForm.controls['email'].dirty)) {
+    @if(regForm.controls['email'].errors?.['required']) {
+    <mat-error>Email is required</mat-error>
+    } @if(regForm.controls['email'].errors?.['email']) {
+    <mat-error>Enter a valid email</mat-error>
+    } }
+  </mat-form-field>
+
+  <!-- Date of Birth -->
+  <mat-form-field appearance="fill">
+    <mat-label>Date of Birth</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="dob" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    @if(regForm.controls['dob'].invalid && (regForm.controls['dob'].touched ||
+    regForm.controls['dob'].dirty)) {
+    @if(regForm.controls['dob'].errors?.['required']) {
+    <mat-error>Date of Birth is required</mat-error>
+    } }
+  </mat-form-field>
+
+  <!-- Subject -->
+  <mat-form-field appearance="fill">
+    <mat-label>Subject</mat-label>
+    <mat-select formControlName="subject">
+      <mat-option *ngFor="let s of subjects" [value]="s">{{ s }}</mat-option>
+    </mat-select>
+    @if(regForm.controls['subject'].invalid &&
+    (regForm.controls['subject'].touched || regForm.controls['subject'].dirty))
+    { @if(regForm.controls['subject'].errors?.['required']) {
+    <mat-error>Subject is required</mat-error>
+    } }
+  </mat-form-field>
+
+  <!-- Submit -->
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="regForm.invalid"
+  >
+    Submit
+  </button>
+</form>

@@ -1,0 +1,20 @@
+<div>
+  <h2>Place Order</h2>
+
+  <label>Select Product:</label>
+  <select [(ngModel)]="selectedProduct" [ngModelOptions]="{ standalone: true }">
+    <option *ngFor="let p of products" [ngValue]="p">
+      {{ p.name }} (Stock: {{ p.qty }})
+    </option>
+  </select>
+
+  <br /><br />
+
+  <label>Purchase Quantity:</label>
+  <input type="number" [(ngModel)]="purchaseQty" min="1" />
+
+  <div *ngIf="errorMessage" style="color: red">{{ errorMessage }}</div>
+
+  <br />
+  <button (click)="placeOrder()">Place Order</button>
+</div>

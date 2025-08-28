@@ -2,10 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from '../models/product';
+import { Order } from '../models/order';
 
 @Injectable({ providedIn: 'root' })
 export class ProductService {
   private apiUrl = 'http://localhost:3000/products';
+   private orderUrl = 'http://localhost:3000/orders';
 
   constructor(private http: HttpClient) {}
 
@@ -26,4 +28,12 @@ export class ProductService {
   deleteProduct(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+  placeOrder(productId: number, qty: number): Observable<Order> {
+    return this.http.post<Order>(`${this.orderUrl}/place/${productId}?qty=${qty}`, {});
+  }
+
+  getOrderHistory(): Observable<Order[]> {
+    return this.http.get<Order[]>(`${this.orderUrl}/history`);
+  }
+
 }

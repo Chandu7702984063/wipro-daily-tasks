@@ -1,0 +1,3 @@
+<input type="text" [formControl]="textControl" placeholder="Type something" />
+<p>{{ (textControl.value || "").split("").reverse().join("") }}</p>
+<app-ex4></app-ex4>

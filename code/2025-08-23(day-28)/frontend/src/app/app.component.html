@@ -1,8 +1,15 @@
-<div style="text-align: center; margin-top: 30px;">
-  <h1>Welcome to Food App</h1>
+<div class="home-container">
+  <div class="welcome-card">
+    <h1 class="title">🍽️ Welcome to Food App</h1>
+    <p class="subtitle">Order your favorite meals anytime, anywhere!</p>
 
-  <button (click)="goToLogin()">Login</button>
-  <button (click)="goToRegister()">Register</button>
+    <div class="button-group">
+      <button class="btn login-btn" (click)="goToLogin()">Login</button>
+      <button class="btn register-btn" (click)="goToRegister()">
+        Register
+      </button>
+    </div>
+  </div>
 
   <router-outlet></router-outlet>
 </div>

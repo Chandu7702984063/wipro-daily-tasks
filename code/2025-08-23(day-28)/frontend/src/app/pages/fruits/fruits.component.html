@@ -1,3 +1,8 @@
+<!-- Header with Logout -->
+<div class="logout-btn">
+  <button (click)="logout()">🚪 Logout</button>
+</div>
+
 <h2>🍎 Food Store</h2>
 
 <!-- Food Grid -->
@@ -33,7 +38,6 @@
   <button (click)="buyNow()">✅ Buy Now</button>
 </div>
 
-<!-- Empty Cart Message -->
 <div *ngIf="cart.length === 0" class="empty-cart">
   <p>Your cart is empty 🛒</p>
 </div>

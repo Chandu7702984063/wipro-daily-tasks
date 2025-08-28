@@ -9,7 +9,7 @@ import { Router } from '@angular/router';               // ✅ Add
   standalone: true,             // ✅ Ensure standalone true
   imports: [RouterOutlet, FormsModule, HttpClientModule], // ✅ Add Forms & HttpClient
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'] // ✅ should be styleUrls (plural)
+  styleUrls: ['./app.component.css'] 
 })
 export class AppComponent {
   constructor(private router: Router) {}

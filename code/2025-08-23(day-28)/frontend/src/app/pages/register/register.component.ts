@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
   standalone: true,
   selector: 'app-register',
   templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css'],
   imports: [FormsModule, CommonModule]   // Required for ngModel and *ngIf/*ngFor
 })
 export class RegisterComponent {

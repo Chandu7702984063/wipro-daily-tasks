@@ -12,7 +12,7 @@ public class Employee {
     private String name;
 
     @Column(nullable=false)
-    private String type; // contract | regular
+    private String type; 
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")

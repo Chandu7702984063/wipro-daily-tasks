@@ -4,16 +4,12 @@
 <head>
     <title>Edit Employee</title>
     <style>
-        /* Reset some basic styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        /* Reset */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f0f2f5;
+            background: #f0f4f8;
             color: #333;
             padding: 20px;
         }
@@ -21,26 +17,28 @@
         h2 {
             text-align: center;
             margin-bottom: 30px;
-            color: #1f4e79;
+            background: linear-gradient(90deg, #1f4e79, #3a70a5);
+            color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .card {
             background: #fff;
             border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
             padding: 30px;
             max-width: 720px;
-            margin: 0 auto;
-            transition: transform 0.3s ease;
+            margin: 20px auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
         }
 
-        form div {
-            margin-bottom: 20px;
-        }
+        form div { margin-bottom: 20px; }
 
         label {
             font-weight: 500;
@@ -49,19 +47,17 @@
             color: #555;
         }
 
-        input[type="text"],
-        select {
+        input[type="text"], select {
             width: 100%;
-            padding: 10px 14px;
-            border-radius: 6px;
+            padding: 12px 14px;
+            border-radius: 8px;
             border: 1px solid #ccc;
             font-size: 16px;
-            transition: border 0.3s;
+            transition: border 0.3s, box-shadow 0.3s;
         }
-
-        input[type="text"]:focus,
-        select:focus {
-            border-color: #1f4e79;
+        input[type="text"]:focus, select:focus {
+            border-color: #3a70a5;
+            box-shadow: 0 0 8px rgba(58,112,165,0.3);
             outline: none;
         }
 
@@ -72,18 +68,18 @@
         }
 
         button[type="submit"] {
-            background-color: #1f4e79;
+            background: linear-gradient(90deg, #1f4e79, #3a70a5);
             color: white;
             padding: 12px 20px;
             border: none;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
             font-size: 16px;
-            transition: background 0.3s;
+            transition: opacity 0.3s, transform 0.2s;
         }
-
         button[type="submit"]:hover {
-            background-color: #3a70a5;
+            opacity: 0.9;
+            transform: translateY(-2px);
         }
 
         a {
@@ -93,19 +89,24 @@
             font-weight: 500;
             transition: color 0.3s;
         }
+        a:hover { color: #3a70a5; }
 
-        a:hover {
-            color: #3a70a5;
+        /* Badge for Employee Type */
+        .type-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 13px;
         }
+        .type-regular { background-color: #28a745; }
+        .type-contract { background-color: #ffc107; color: #333; }
 
         @media (max-width: 500px) {
-            .card {
-                padding: 20px;
-            }
-
-            .address-inputs {
-                grid-template-columns: 1fr;
-            }
+            .card { padding: 20px; }
+            .address-inputs { grid-template-columns: 1fr; }
+            h2 { font-size: 22px; padding: 12px; }
         }
     </style>
 </head>
