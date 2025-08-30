@@ -1,0 +1,22 @@
+<h3>Register</h3>
+<form (ngSubmit)="submit()">
+  <input
+    [(ngModel)]="username"
+    name="username"
+    placeholder="Username"
+    class="form-control mb-2"
+  />
+  <input
+    [(ngModel)]="password"
+    name="password"
+    type="password"
+    placeholder="Password"
+    class="form-control mb-2"
+  />
+  <select [(ngModel)]="role" name="role" class="form-select mb-2">
+    <option value="CUSTOMER">Customer</option>
+    <option value="ADMIN">Admin</option>
+  </select>
+  <button class="btn btn-primary">Register</button>
+</form>
+<div class="mt-2 text-success">{{ message }}</div>

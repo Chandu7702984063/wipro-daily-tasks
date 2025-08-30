@@ -1,0 +1,7 @@
+<h3>Login</h3>
+<form (ngSubmit)="submit()">
+  <input [(ngModel)]="username" name="username" placeholder="Username" class="form-control mb-2">
+  <input [(ngModel)]="password" name="password" type="password" placeholder="Password" class="form-control mb-2">
+  <button class="btn btn-success">Login</button>
+</form>
+<div class="mt-2 text-danger">{{error}}</div>

@@ -4,6 +4,8 @@ import com.bookmyfood.userservice.entity.UserEntity;
 import com.bookmyfood.userservice.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.User;
 
 @RestController
 @RequestMapping("/user")
@@ -23,6 +25,14 @@ public class UserController {
     @GetMapping("/{id}")
     public ResponseEntity<?> get(@PathVariable Long id) {
         return service.get(id).<ResponseEntity<?>>map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/me")
+    public ResponseEntity<?> me(Authentication authentication) {
+        String username = authentication.getName();
+        return service.findByUsername(username)
+                .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
